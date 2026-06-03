@@ -30,7 +30,7 @@ interface Insight {
   repository: Repository;
 }
 
-const BACKEND_URL = "https://backend-liart-seven.vercel.app";
+const BACKEND_URL = "https://repomind-api.vercel.app";
 
 export default function InsightsPage() {
   const [insights, setInsights] = useState<Insight[]>([]);

@@ -104,7 +104,7 @@ export default function RootLayout({
         {/* Footer */}
         <footer className="w-full border-t border-border bg-background py-8">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-            <p>© {new Date().getFullYear()} RepoMind. Designed for VSQC Internship Evaluation.</p>
+            <p suppressHydrationWarning>© {new Date().getFullYear()} RepoMind. Designed for VSQC Internship Evaluation.</p>
             <div className="flex gap-6">
               <span>FastAPI Python Engine</span>
               <span>Next.js Client</span>
