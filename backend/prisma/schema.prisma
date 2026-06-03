@@ -1,0 +1,47 @@
+// Prisma Schema for RepoMind
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-py"
+  interface = "asyncio"
+}
+
+model Repository {
+  id              String   @id @default(uuid())
+  githubId        Int      @unique
+  fullName        String   @unique // e.g. "facebook/react"
+  name            String
+  ownerName       String
+  ownerAvatarUrl  String
+  description     String?
+  stars           Int
+  forks           Int
+  watchers        Int
+  openIssues      Int
+  defaultBranch   String
+  primaryLanguage String?
+  license         String?
+  createdDate     DateTime
+  lastUpdatedDate DateTime
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  insights        Insight[]
+}
+
+model Insight {
+  id           String      @id @default(uuid())
+  repoId       String
+  note         String
+  priority     String      // "High" | "Medium" | "Low"
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  // Relations
+  repository   Repository  @relation(fields: [repoId], references: [id], onDelete: Cascade)
+}
