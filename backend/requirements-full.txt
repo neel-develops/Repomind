@@ -1,0 +1,9 @@
+# Full requirements including Prisma ORM for local development with PostgreSQL
+# Use: pip install -r requirements-full.txt && prisma generate
+fastapi
+uvicorn[standard]
+prisma
+pydantic
+httpx
+python-dotenv
+pytest

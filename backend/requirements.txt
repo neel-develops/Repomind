@@ -1,6 +1,5 @@
 fastapi
 uvicorn[standard]
-prisma
 pydantic
 httpx
 python-dotenv
