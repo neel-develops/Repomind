@@ -6,8 +6,9 @@ datasource db {
 }
 
 generator client {
-  provider = "prisma-client-py"
-  interface = "asyncio"
+  provider      = "prisma-client-py"
+  interface     = "asyncio"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x", "linux-musl-arm64-openssl-3.0.x"]
 }
 
 model Repository {
